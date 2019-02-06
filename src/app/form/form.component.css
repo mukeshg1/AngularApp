@@ -12,6 +12,7 @@
     padding: 10px;
     margin: 10px;
     border-radius: 2px;
+    float: left;
   }
   .toolbar-style{
     background-color: black;
