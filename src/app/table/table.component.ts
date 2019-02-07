@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-table',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _formData: FormComponent) { 
+    
+  }
 
   ngOnInit() {
   }
@@ -15,14 +18,14 @@ export class TableComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
 }
-export interface PeriodicElement {
+export interface FormData {
   address: string;
   name: string;
   dob: string;
   email: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: FormData[] = [
   {name: 'Amit Rastogi', address: 'Banglore', dob: '2/1/2019', email: 'amit@email.com'},
   {name: 'Birodh Basnet', address: 'Bhubaneswar', dob: '2/1/2019', email: 'birodh@email.com'},
   {name: 'Chandra Adhikari', address: 'Chennai', dob: '1/24/2019', email: 'chandra@email.com'},

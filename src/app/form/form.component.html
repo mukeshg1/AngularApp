@@ -3,7 +3,7 @@
     <a class="toolbar-style-link" href="#">Home</a>
   </mat-toolbar>
   <div class="container">
-    <form class="register-form">
+    <form class="register-form" #registerform="ngForm" (ngSubmit)="registerUser(registerform)">
       <h3>Create an account.</h3>
       <h4><i>It's free and takes only a minute.</i></h4>
       <mat-form-field appearance="outline" class="register-full-width">
@@ -14,7 +14,7 @@
   
       <mat-form-field appearance="outline" class="register-full-width">
         <mat-label>Address</mat-label>
-        <input matInput placeholder="Enter Address" name="address">
+        <input matInput placeholder="Enter Address" name="addr" [formControl]="addr">
       </mat-form-field>
   
       <mat-form-field appearance="outline" class="register-full-width">
@@ -34,4 +34,9 @@
 
       <button mat-raised-button color="primary">Register</button>
     </form>
+    <ul>
+      <li *ngFor="let form of dataList">
+        {{ form.name }}
+      </li>
+    </ul>
   </div>
