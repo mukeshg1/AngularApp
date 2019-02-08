@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.dataList=[{name: 'Amit Rastogi', addr: 'Banglore', dob: 'Fri Feb 01 2019 00:00:00 GMT+0530 (India Standard Time)', email: 'amit@email.com'},
-    {name: 'Birodh Basnet', addr: 'Bhubaneswar', dob: 'Fri Feb 02 2018 00:00:00 GMT+0530 (India Standard Time)', email: 'birodh@email.com'},
+    {name: 'Birodh Basnet', addr: 'Bhubaneswar', dob: 'Fri Feb 02 2018 00:00:00 GMT+0530 (India Standard Time)', email: 'birodh@email.com'}
   
   ]
   }

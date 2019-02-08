@@ -6,18 +6,18 @@
   <form class="register-form" [formGroup]="registerForm" (ngSubmit)="registerUser()">
     <h3>Create an account.</h3>
     <h4><i>It's free and takes only a minute.</i></h4>
-    <mat-form-field appearance="outline" class="register-full-width">
+    <mat-form-field class="register-full-width">
       <mat-label>Name</mat-label>
       <input matInput placeholder="Enter Name" name="name"  formControlName="name" required>
       <mat-error *ngIf="registerForm.controls['name'].hasError('required')">{{getNameErrorMessage()}}</mat-error>
     </mat-form-field>
   
-    <mat-form-field appearance="outline" class="register-full-width">
+    <mat-form-field class="register-full-width">
       <mat-label>Address</mat-label>
       <input matInput placeholder="Enter Address" name="addr" formControlName="addr">
     </mat-form-field>
   
-    <mat-form-field appearance="outline" class="register-full-width">
+    <mat-form-field class="register-full-width">
       <mat-label>Date of Birth</mat-label>
       <input matInput [matDatepicker]="picker" placeholder="Choose a Date of Birth" name="dob" formControlName="dob" required>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -26,13 +26,14 @@
       <mat-error *ngIf="registerForm.controls['dob'].hasError('required')">{{getDOBErrorMessage()}}</mat-error>
     </mat-form-field>
   
-    <mat-form-field appearance="outline" class="register-full-width">
+    <mat-form-field class="register-full-width">
       <mat-label>Email</mat-label>
       <input matInput placeholder="Enter email address" name="email" formControlName="email" required>
       <mat-error *ngIf="registerForm.controls['email'].hasError('required')">{{getEmailErrorMessage()}}</mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" [disabled]="registerForm.invalid">Register</button>
+    <button mat-raised-button color="primary" [disabled]="registerForm.invalid">Register</button><br>
+    <mat-hint>Enter all the required values to activate register button</mat-hint>
   </form>
 </div>
 
