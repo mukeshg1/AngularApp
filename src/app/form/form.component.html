@@ -3,36 +3,36 @@
     <a class="toolbar-style-link" href="#">Home</a>
 </mat-toolbar>
 <div class="container">
-  <form class="register-form" #registerform="ngForm" (ngSubmit)="registerUser(); reset()">
+  <form class="register-form" [formGroup]="registerForm" (ngSubmit)="registerUser()">
     <h3>Create an account.</h3>
     <h4><i>It's free and takes only a minute.</i></h4>
     <mat-form-field appearance="outline" class="register-full-width">
       <mat-label>Name</mat-label>
-      <input matInput placeholder="Enter Name" name="name" [formControl]="name" required>
-      <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
+      <input matInput placeholder="Enter Name" name="name"  formControlName="name" required>
+      <mat-error *ngIf="registerForm.controls['name'].hasError('required')">{{getNameErrorMessage()}}</mat-error>
     </mat-form-field>
   
     <mat-form-field appearance="outline" class="register-full-width">
       <mat-label>Address</mat-label>
-      <input matInput placeholder="Enter Address" name="addr" [formControl]="addr">
+      <input matInput placeholder="Enter Address" name="addr" formControlName="addr">
     </mat-form-field>
   
     <mat-form-field appearance="outline" class="register-full-width">
       <mat-label>Date of Birth</mat-label>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a Date of Birth" name="dob" [formControl]="dob" required>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a Date of Birth" name="dob" formControlName="dob" required>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker disabled="false"></mat-datepicker>
       <mat-hint>Click on calendar icon to pick a date.</mat-hint>
-      <mat-error *ngIf="dob.invalid">{{getDOBErrorMessage()}}</mat-error>
+      <mat-error *ngIf="registerForm.controls['dob'].hasError('required')">{{getDOBErrorMessage()}}</mat-error>
     </mat-form-field>
   
     <mat-form-field appearance="outline" class="register-full-width">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="Enter email address" name="email" [formControl]="email" required>
-      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+      <input matInput placeholder="Enter email address" name="email" formControlName="email" required>
+      <mat-error *ngIf="registerForm.controls['email'].hasError('required')">{{getEmailErrorMessage()}}</mat-error>
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Register</button>
+    <button mat-raised-button color="primary" [disabled]="registerForm.invalid">Register</button>
   </form>
 </div>
 

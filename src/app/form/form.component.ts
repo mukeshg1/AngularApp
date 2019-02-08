@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, Validators, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -17,9 +17,57 @@ export class FormComponent implements OnInit {
   
   ]
   }
+  registerForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    addr: new FormControl(),
+    dob: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email])
+
+    
+  });
 
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  registerUser()
+  {
+    this.dataList.push(
+      {
+        name: this.registerForm.controls['name'].value,
+        email: this.registerForm.controls['email'].value,
+        dob: this.registerForm.controls['dob'].value,
+        addr: this.registerForm.controls['addr'].value
+      });
+      this.registerForm.reset();
+      return this.registerForm.valid;
+  }
+
+  getNameErrorMessage() {
+    return this.registerForm.controls['name'].hasError('required') ? 'You must enter a name.' :
+            '';
+  }
+
+  getEmailErrorMessage() {
+    return this.registerForm.controls['email'].hasError('required') ? 'You must enter an email.' :
+    this.registerForm.controls['email'].hasError('email') ? 'Invalid email! Email should be valid.' :
+            '';
+  }
+
+  getDOBErrorMessage() {
+    return this.registerForm.controls['dob'].hasError('required') ? 'You must pick a date of birth.' :
+            '';
+  }
+  onDelete(form){
+    this.dataList = this.dataList.filter(f => f.name !== form.name);
+  }
+
+
+
+
+
+
+
+
+
+  /*email = new FormControl('', [Validators.required, Validators.email]);
   name = new FormControl('', [Validators.required]);
   dob = new FormControl('', [Validators.required]);
   addr = new FormControl('');
@@ -58,6 +106,6 @@ export class FormComponent implements OnInit {
 
   onDelete(form){
     this.dataList = this.dataList.filter(f => f.name !== form.name);
-  }
+  }*/
 
 }
