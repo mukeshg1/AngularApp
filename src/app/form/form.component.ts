@@ -12,10 +12,8 @@ export class FormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.dataList=[{name: 'Amit Rastogi', address: 'Banglore', dob: '2/1/2019', email: 'amit@email.com'},
-    {name: 'Birodh Basnet', address: 'Bhubaneswar', dob: '2/1/2019', email: 'birodh@email.com'},
-    {name: 'Chandra Adhikari', address: 'Chennai', dob: '1/24/2019', email: 'chandra@email.com'},
-    {name: 'Devasis Das', address: 'Kathmandu', dob: '1/24/2019', email: 'dev@email.com'}
+    this.dataList=[{name: 'Amit Rastogi', addr: 'Banglore', dob: 'Fri Feb 01 2019 00:00:00 GMT+0530 (India Standard Time)', email: 'amit@email.com'},
+    {name: 'Birodh Basnet', addr: 'Bhubaneswar', dob: 'Fri Feb 02 2018 00:00:00 GMT+0530 (India Standard Time)', email: 'birodh@email.com'},
   
   ]
   }
@@ -49,8 +47,17 @@ export class FormComponent implements OnInit {
         email: this.email.value,
         dob: this.dob.value,
         addr: this.addr.value
-      }
-    )
+      });
+      return  this.name = new FormControl(''),  this.email = new FormControl(''), this.addr = new FormControl(''), this.dob = new FormControl(''), this.name.setErrors(null);
+  }
+
+  reset()
+  {
+    console.log('reset');
+  }
+
+  onDelete(form){
+    this.dataList = this.dataList.filter(f => f.name !== form.name);
   }
 
 }

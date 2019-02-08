@@ -28,7 +28,22 @@
   color: yellow;
 }
 .logo{
-  size: 20px;
-  height: 70px;
-  width: 5%;
+  size: 30px;
+}
+
+table {
+  width: 900px;
+  margin: 10px;
+  
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+th{
+  font-style: italic;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
 }
