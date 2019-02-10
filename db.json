@@ -15,5 +15,19 @@
       "title": "Todo Three",
       "completed": false
     }
+    ],
+    "users":[
+      {
+        "name": "Amit Rastogi",
+        "address":"Banglore",
+        "dob":"Fri Feb 01 2019 00:00:00 GMT+0530 (India Standard Time)",
+        "email": "amit@email.com"
+      },
+      {
+        "name": "Birodh Basnet",
+        "address":"Bhubaneswar",
+        "dob":"Fri Feb 01 2019 00:00:00 GMT+0530 (India Standard Time)",
+        "email": "birodh@email.com"
+      }
     ]
 }
