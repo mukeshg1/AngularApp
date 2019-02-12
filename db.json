@@ -21,14 +21,14 @@
         "id": 1,
         "name": "Amit Rastogi",
         "address":"Banglore",
-        "dob":"Fri Feb 01 2019 00:00:00 GMT+0530 (India Standard Time)",
+        "dob":"2019-01-31T18:30:00.000Z",
         "email": "amit@email.com"
       },
       {
         "id": 2,
         "name": "Birodh Basnet",
         "address":"Bhubaneswar",
-        "dob":"Fri Feb 01 2019 00:00:00 GMT+0530 (India Standard Time)",
+        "dob":"2019-01-31T18:30:00.000Z",
         "email": "birodh@email.com"
       }
     ],
